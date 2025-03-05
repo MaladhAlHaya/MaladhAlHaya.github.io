@@ -1,0 +1,9 @@
+This is a placeholder file for user avatars.
+
+In a real implementation, this directory would contain actual user avatar image files like:
+- default-avatar.jpg
+- user1.jpg
+- user2.jpg
+- etc.
+
+Please replace this placeholder with actual user avatar image files.

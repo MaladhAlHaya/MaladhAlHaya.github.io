@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Maladh Al Haya - Islamic Clothing and Products">
+    <meta name="theme-color" content="#121212">
+    <title>Maladh Al Haya | ملاذ الحياء</title>
+    
+    <!-- PWA Support -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="assets/icons/icon-192x192.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-theme">
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button data-lang="en" class="active">English</button>
+        <button data-lang="ml">മലയാളം</button>
+        <button data-lang="ar">العربية</button>
+    </div>
+    
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <button id="theme-toggle-btn">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+    
+    <!-- Header -->
+    <header class="main-header">
+        <div class="logo">
+            <h1>
+                <span class="en">Maladh Al Haya</span>
+                <span class="ar">ملاذ الحياء</span>
+            </h1>
+        </div>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search products...">
+            <button id="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="active" data-lang-key="home">Home</a></li>
+                <li><a href="pages/categories.html" data-lang-key="categories">Categories</a></li>
+                <li><a href="pages/about.html" data-lang-key="about">About</a></li>
+                <li><a href="pages/contact.html" data-lang-key="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Side Menu (Hidden by default) -->
+    <nav class="side-menu">
+        <div class="side-menu-content">
+            <div class="side-menu-header">
+                <h2 data-lang-key="menu">Menu</h2>
+                <button class="close-menu-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <ul class="side-menu-links">
+                <li><a href="index.html" data-lang-key="home">Home</a></li>
+                <li><a href="pages/categories.html" data-lang-key="categories">Categories</a></li>
+                <li>
+                    <a href="#" class="dropdown-toggle" data-lang-key="products">Products</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pages/category.html?cat=dresses" data-lang-key="white_dresses">White Dresses</a></li>
+                        <li><a href="pages/category.html?cat=kandura" data-lang-key="kandura">Kandura</a></li>
+                        <li><a href="pages/category.html?cat=jubba" data-lang-key="jubba">Jubba</a></li>
+                        <li><a href="pages/category.html?cat=kurta" data-lang-key="kurta">Kurta</a></li>
+                        <li><a href="pages/category.html?cat=mund" data-lang-key="mund">Mund</a></li>
+                        <li><a href="pages/category.html?cat=turban" data-lang-key="turban">Turban</a></li>
+                        <li><a href="pages/category.html?cat=shall" data-lang-key="shall">Shall</a></li>
+                        <li><a href="pages/category.html?cat=inners" data-lang-key="inners">Inners</a></li>
+                        <li><a href="pages/category.html?cat=abaya" data-lang-key="abaya">Abaya</a></li>
+                        <li><a href="pages/category.html?cat=parda" data-lang-key="parda">Parda</a></li>
+                        <li><a href="pages/category.html?cat=hijab" data-lang-key="hijab">Hijab</a></li>
+                        <li><a href="pages/category.html?cat=niqab" data-lang-key="niqab">Niqab</a></li>
+                        <li><a href="pages/category.html?cat=fragrance" data-lang-key="fragrance">Fragrance</a></li>
+                        <li><a href="pages/category.html?cat=quran" data-lang-key="quran">Quran</a></li>
+                        <li><a href="pages/category.html?cat=kithabs" data-lang-key="kithabs">Kithabs</a></li>
+                        <li><a href="pages/category.html?cat=prayer_mats" data-lang-key="prayer_mats">Prayer Mats</a></li>
+                    </ul>
+                </li>
+                <li><a href="pages/offers.html" data-lang-key="offers">Offers</a></li>
+                <li><a href="pages/about.html" data-lang-key="about">About</a></li>
+                <li><a href="pages/contact.html" data-lang-key="contact">Contact</a></li>
+            </ul>
+            <div class="side-menu-footer">
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section with Featured Product -->
+        <section class="hero-section">
+            <div class="featured-product">
+                <div class="product-image">
+                    <img src="assets/images/featured-product.jpg" alt="Featured Product">
+                </div>
+                <div class="product-info">
+                    <h2 class="product-title" data-lang-key="premium_jubba">Premium Jubba Collection</h2>
+                    <p class="product-description" data-lang-key="premium_jubba_desc">Discover our exclusive collection of premium Jubbas, designed for comfort and elegance.</p>
+                    <div class="product-price">₹1,999</div>
+                    <div class="product-actions">
+                        <button class="btn primary-btn" data-lang-key="view_product">View Product</button>
+                        <button class="btn secondary-btn" data-lang-key="add_to_cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="swipe-indicator">
+                    <span data-lang-key="swipe_next">Swipe for next product</span>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Categories Section -->
+        <section class="categories-section">
+            <div class="section-header">
+                <h2 data-lang-key="categories">Categories</h2>
+                <a href="pages/categories.html" class="see-all" data-lang-key="see_all">See All</a>
+            </div>
+            <div class="categories-grid">
+                <a href="pages/category.html?cat=dresses" class="category-card">
+                    <div class="category-image">
+                        <img src="assets/images/categories/white-dresses.jpg" alt="White Dresses">
+                    </div>
+                    <h3 data-lang-key="white_dresses">White Dresses</h3>
+                </a>
+                <a href="pages/category.html?cat=jubba" class="category-card">
+                    <div class="category-image">
+                        <img src="assets/images/categories/jubba.jpg" alt="Jubba">
+                    </div>
+                    <h3 data-lang-key="jubba">Jubba</h3>
+                </a>
+                <a href="pages/category.html?cat=abaya" class="category-card">
+                    <div class="category-image">
+                        <img src="assets/images/categories/abaya.jpg" alt="Abaya">
+                    </div>
+                    <h3 data-lang-key="abaya">Abaya</h3>
+                </a>
+                <a href="pages/category.html?cat=quran" class="category-card">
+                    <div class="category-image">
+                        <img src="assets/images/categories/quran.jpg" alt="Quran">
+                    </div>
+                    <h3 data-lang-key="quran">Quran</h3>
+                </a>
+            </div>
+        </section>
+        
+        <!-- Popular Products Section -->
+        <section class="products-section">
+            <div class="section-header">
+                <h2 data-lang-key="popular_products">Popular Products</h2>
+                <a href="pages/products.html" class="see-all" data-lang-key="see_all">See All</a>
+            </div>
+            <div class="products-grid">
+                <!-- Product Card 1 -->
+                <div class="product-card">
+                    <div class="product-badge">New</div>
+                    <div class="product-image">
+                        <img src="assets/images/products/white-dress-1.jpg" alt="White Dress">
+                        <div class="product-actions">
+                            <button class="action-btn favorite-btn"><i class="far fa-heart"></i></button>
+                            <button class="action-btn cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Premium White Thobe</h3>
+                        <div class="product-price">₹1,499</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 2 -->
+                <div class="product-card">
+                    <div class="product-badge sale">Sale</div>
+                    <div class="product-image">
+                        <img src="assets/images/products/jubba-1.jpg" alt="Jubba">
+                        <div class="product-actions">
+                            <button class="action-btn favorite-btn"><i class="far fa-heart"></i></button>
+                            <button class="action-btn cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Elegant Jubba</h3>
+                        <div class="product-price">
+                            <span class="original-price">₹2,199</span>
+                            <span class="discounted-price">₹1,799</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.0)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/images/products/abaya-1.jpg" alt="Abaya">
+                        <div class="product-actions">
+                            <button class="action-btn favorite-btn"><i class="far fa-heart"></i></button>
+                            <button class="action-btn cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Classic Black Abaya</h3>
+                        <div class="product-price">₹2,499</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/images/products/prayer-mat-1.jpg" alt="Prayer Mat">
+                        <div class="product-actions">
+                            <button class="action-btn favorite-btn"><i class="far fa-heart"></i></button>
+                            <button class="action-btn cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Prayer Mat</h3>
+                        <div class="product-price">₹899</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.0)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Offer Banner -->
+        <section class="offer-banner">
+            <div class="offer-content">
+                <h2 data-lang-key="special_offer">Special Offer</h2>
+                <p data-lang-key="offer_description">Get 20% off on all Jubba collections. Use code: JUBBA20</p>
+                <button class="btn primary-btn" data-lang-key="shop_now">Shop Now</button>
+            </div>
+        </section>
+        
+        <!-- New Arrivals Section -->
+        <section class="products-section">
+            <div class="section-header">
+                <h2 data-lang-key="new_arrivals">New Arrivals</h2>
+                <a href="pages/new-arrivals.html" class="see-all" data-lang-key="see_all">See All</a>
+            </div>
+            <div class="products-grid">
+                <!-- Product Card 1 -->
+                <div class="product-card">
+                    <div class="product-badge">New</div>
+                    <div class="product-image">
+                        <img src="assets/images/products/kurta-1.jpg" alt="Kurta">
+                        <div class="product-actions">
+                            <button class="action-btn favorite-btn"><i class="far fa-heart"></i></button>
+                            <button class="action-btn cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Designer Kurta</h3>
+                        <div class="product-price">₹1,299</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.0)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 2 -->
+                <div class="product-card">
+                    <div class="product-badge">New</div>
+                    <div class="product-image">
+                        <img src="assets/images/products/hijab-1.jpg" alt="Hijab">
+                        <div class="product-actions">
+                            <button class="action-btn favorite-btn"><i class="far fa-heart"></i></button>
+                            <button class="action-btn cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Premium Hijab</h3>
+                        <div class="product-price">₹699</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 3 -->
+                <div class="product-card">
+                    <div class="product-badge">New</div>
+                    <div class="product-image">
+                        <img src="assets/images/products/quran-1.jpg" alt="Quran">
+                        <div class="product-actions">
+                            <button class="action-btn favorite-btn"><i class="far fa-heart"></i></button>
+                            <button class="action-btn cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Holy Quran with Translation</h3>
+                        <div class="product-price">₹1,199</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 4 -->
+                <div class="product-card">
+                    <div class="product-badge">New</div>
+                    <div class="product-image">
+                        <img src="assets/images/products/fragrance-1.jpg" alt="Fragrance">
+                        <div class="product-actions">
+                            <button class="action-btn favorite-btn"><i class="far fa-heart"></i></button>
+                            <button class="action-btn cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Alcohol-Free Fragrance</h3>
+                        <div class="product-price">₹899</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.0)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Floating Navigation Bar -->
+    <nav class="floating-nav">
+        <a href="index.html" class="floating-nav-item active">
+            <i class="fas fa-home"></i>
+            <span data-lang-key="home">Home</span>
+        </a>
+        <a href="pages/cart.html" class="floating-nav-item">
+            <i class="fas fa-shopping-cart"></i>
+            <span data-lang-key="cart">Cart</span>
+            <span class="cart-count">0</span>
+        </a>
+        <a href="pages/profile.html" class="floating-nav-item">
+            <i class="fas fa-user"></i>
+            <span data-lang-key="profile">Profile</span>
+        </a>
+    </nav>
+    
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 data-lang-key="about_us">About Us</h3>
+                <p data-lang-key="about_description">Maladh Al Haya is dedicated to providing high-quality Islamic clothing and products for Muslims around the world.</p>
+            </div>
+            <div class="footer-section">
+                <h3 data-lang-key="quick_links">Quick Links</h3>
+                <ul>
+                    <li><a href="index.html" data-lang-key="home">Home</a></li>
+                    <li><a href="pages/products.html" data-lang-key="products">Products</a></li>
+                    <li><a href="pages/about.html" data-lang-key="about">About</a></li>
+                    <li><a href="pages/contact.html" data-lang-key="contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 data-lang-key="contact_us">Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> info@maladhalhaya.com</p>
+                <p><i class="fas fa-phone"></i> +91 1234567890</p>
+                <p><i class="fas fa-map-marker-alt"></i> Kerala, India</p>
+            </div>
+            <div class="footer-section">
+                <h3 data-lang-key="follow_us">Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Maladh Al Haya. All rights reserved. | Designed by <a href="https://navarmp.digibayt.com" target="_blank">Muhammed Navar</a></p>
+        </div>
+    </footer>
+    
+    <!-- PWA Install Prompt (Hidden by default) -->
+    <div class="pwa-install-prompt" id="pwa-install-prompt">
+        <div class="prompt-content">
+            <div class="prompt-header">
+                <h3 data-lang-key="install_app">Install Our App</h3>
+                <button class="close-prompt-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <p data-lang-key="install_description">Install Maladh Al Haya on your device for a better experience!</p>
+            <button class="btn primary-btn" id="install-btn" data-lang-key="install">Install</button>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/language.js"></script>
+    <script src="scripts/pwa.js"></script>
+    <script src="scripts/effects.js"></script>
+</body>
+</html>

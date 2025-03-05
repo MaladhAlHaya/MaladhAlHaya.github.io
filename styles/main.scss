@@ -1,0 +1,40 @@
+// Main SCSS File
+// This file imports all other SCSS partials
+
+// Variables and Configuration
+@import 'variables';
+@import 'mixins';
+
+// Base Styles
+@import 'reset';
+@import 'typography';
+@import 'animations';
+
+// Layout
+@import 'layout';
+
+// Components
+@import 'components/header';
+@import 'components/footer';
+@import 'components/navigation';
+@import 'components/buttons';
+@import 'components/cards';
+@import 'components/forms';
+@import 'components/product';
+@import 'components/sidebar';
+@import 'components/floating-nav';
+
+// Pages
+@import 'pages/home';
+@import 'pages/product';
+@import 'pages/cart';
+@import 'pages/profile';
+
+// Themes
+@import 'themes';
+
+// Utilities
+@import 'utilities';
+
+// Responsive
+@import 'responsive';

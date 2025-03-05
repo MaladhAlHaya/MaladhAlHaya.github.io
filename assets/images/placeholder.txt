@@ -1,0 +1,9 @@
+This is a placeholder file for images.
+
+In a real implementation, this directory would contain actual image files like:
+- logo.png
+- featured-product.jpg
+- offer-bg.jpg
+- etc.
+
+Please replace this placeholder with actual image files.

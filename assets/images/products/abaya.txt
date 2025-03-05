@@ -1,0 +1,12 @@
+This is a placeholder file for an abaya product image.
+
+In a real implementation, this file would be replaced with actual product image files for abayas, such as:
+- abaya-1.jpg
+- abaya-2.jpg
+- abaya-3.jpg
+- abaya-4.jpg
+- abaya-5.jpg
+
+Each product should have multiple images showing different angles, details, and variations of the product.
+
+Please replace this placeholder with actual product image files.

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Maladh Al Haya - Islamic Clothing and Products">
+    <meta name="theme-color" content="#121212">
+    <title>Offline | Maladh Al Haya</title>
+    
+    <!-- PWA Support -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="assets/icons/icon-192x192.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Inline styles for offline page */
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .offline-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .offline-icon {
+            font-size: 5rem;
+            color: #0d5e46;
+            margin-bottom: 1.5rem;
+            animation: pulse 2s infinite;
+        }
+        
+        .offline-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .offline-message {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin: 0.5rem;
+        }
+        
+        .primary-btn {
+            background-color: #0d5e46;
+            color: #ffffff;
+        }
+        
+        .primary-btn:hover {
+            background-color: #0a4a38;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(13, 94, 70, 0.3);
+        }
+        
+        .secondary-btn {
+            background-color: transparent;
+            border: 2px solid #0d5e46;
+            color: #0d5e46;
+        }
+        
+        .secondary-btn:hover {
+            background-color: #0d5e46;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        
+        .offline-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .offline-features {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 800px;
+            width: 100%;
+        }
+        
+        .offline-feature {
+            background-color: #1e1e1e;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .offline-feature i {
+            font-size: 2rem;
+            color: #d4af37;
+            margin-bottom: 1rem;
+        }
+        
+        .offline-feature h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .offline-feature p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .offline-title {
+                font-size: 1.5rem;
+            }
+            
+            .offline-message {
+                font-size: 1rem;
+            }
+            
+            .offline-features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <div class="offline-container">
+        <div class="offline-icon">
+            <i class="fas fa-wifi-slash"></i>
+        </div>
+        
+        <h1 class="offline-title">You're Offline</h1>
+        
+        <p class="offline-message">
+            It looks like you're currently offline. Don't worry, you can still access some features of Maladh Al Haya that have been cached for offline use.
+        </p>
+        
+        <div class="offline-actions">
+            <button class="btn primary-btn" id="retry-btn">
+                <i class="fas fa-sync-alt"></i> Retry Connection
+            </button>
+            
+            <a href="index.html" class="btn secondary-btn">
+                <i class="fas fa-home"></i> Go to Homepage
+            </a>
+        </div>
+        
+        <div class="offline-features">
+            <div class="offline-feature">
+                <i class="fas fa-shopping-cart"></i>
+                <h3>View Cart</h3>
+                <p>You can still view items in your shopping cart while offline.</p>
+            </div>
+            
+            <div class="offline-feature">
+                <i class="fas fa-heart"></i>
+                <h3>Wishlist</h3>
+                <p>Access your saved wishlist items even without an internet connection.</p>
+            </div>
+            
+            <div class="offline-feature">
+                <i class="fas fa-history"></i>
+                <h3>Browsing History</h3>
+                <p>View your recently browsed products that have been cached.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Check if online and redirect to the homepage
+        window.addEventListener('online', () => {
+            window.location.href = '/';
+        });
+        
+        // Retry connection button
+        document.getElementById('retry-btn').addEventListener('click', () => {
+            window.location.reload();
+        });
+    </script>
+</body>
+</html>

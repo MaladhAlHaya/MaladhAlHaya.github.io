@@ -1,0 +1,12 @@
+This is a placeholder file for a kandura product image.
+
+In a real implementation, this file would be replaced with actual product image files for kanduras, such as:
+- kandura-1.jpg
+- kandura-2.jpg
+- kandura-3.jpg
+- kandura-4.jpg
+- kandura-5.jpg
+
+Each product should have multiple images showing different angles, details, and variations of the product.
+
+Please replace this placeholder with actual product image files.

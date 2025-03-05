@@ -1,0 +1,142 @@
+// Variables SCSS File
+// Contains all variables used throughout the site
+
+// Colors
+// Main Colors
+$primary-color: #0d5e46; // Deep green
+$secondary-color: #1a3a5f; // Rich blue
+$accent-color: #d4af37; // Gold
+
+// Neutral Colors
+$white: #ffffff;
+$off-white: #f8f8f8;
+$light-gray: #e0e0e0;
+$medium-gray: #9e9e9e;
+$dark-gray: #616161;
+$black: #212121;
+
+// Semantic Colors
+$success-color: #4caf50;
+$error-color: #f44336;
+$warning-color: #ff9800;
+$info-color: #2196f3;
+
+// Theme Colors (Dark Theme - Default)
+$bg-dark: #121212;
+$bg-dark-secondary: #1e1e1e;
+$text-dark: $white;
+$border-dark: rgba(255, 255, 255, 0.1);
+
+// Theme Colors (Light Theme)
+$bg-light: $white;
+$bg-light-secondary: $off-white;
+$text-light: $black;
+$border-light: rgba(0, 0, 0, 0.1);
+
+// Typography
+$font-family-primary: 'Poppins', sans-serif;
+$font-family-secondary: 'Amiri', serif; // Good for Arabic text
+
+$font-size-xs: 0.75rem;    // 12px
+$font-size-sm: 0.875rem;   // 14px
+$font-size-base: 1rem;     // 16px
+$font-size-md: 1.125rem;   // 18px
+$font-size-lg: 1.25rem;    // 20px
+$font-size-xl: 1.5rem;     // 24px
+$font-size-2xl: 1.875rem;  // 30px
+$font-size-3xl: 2.25rem;   // 36px
+$font-size-4xl: 3rem;      // 48px
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$line-height-tight: 1.25;
+$line-height-normal: 1.5;
+$line-height-loose: 1.75;
+
+// Spacing
+$spacing-xs: 0.25rem;   // 4px
+$spacing-sm: 0.5rem;    // 8px
+$spacing-md: 1rem;      // 16px
+$spacing-lg: 1.5rem;    // 24px
+$spacing-xl: 2rem;      // 32px
+$spacing-2xl: 3rem;     // 48px
+$spacing-3xl: 4rem;     // 64px
+
+// Borders
+$border-radius-sm: 0.25rem;  // 4px
+$border-radius-md: 0.5rem;   // 8px
+$border-radius-lg: 1rem;     // 16px
+$border-radius-full: 9999px;
+
+$border-width-thin: 1px;
+$border-width-medium: 2px;
+$border-width-thick: 4px;
+
+// Shadows
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+// Z-index
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal-backdrop: 1040;
+$z-index-modal: 1050;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070;
+
+// Breakpoints
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+
+// Container widths
+$container-max-width-sm: 540px;
+$container-max-width-md: 720px;
+$container-max-width-lg: 960px;
+$container-max-width-xl: 1140px;
+$container-max-width-xxl: 1320px;
+
+// Transitions
+$transition-fast: 150ms;
+$transition-normal: 300ms;
+$transition-slow: 500ms;
+
+// Animation
+$animation-curve-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1);
+$animation-curve-linear-out-slow-in: cubic-bezier(0, 0, 0.2, 1);
+$animation-curve-fast-out-linear-in: cubic-bezier(0.4, 0, 1, 1);
+
+// Grid
+$grid-columns: 12;
+$grid-gutter-width: 1.5rem;
+
+// Components
+// Buttons
+$button-padding-y: 0.75rem;
+$button-padding-x: 1.5rem;
+$button-border-radius: $border-radius-md;
+
+// Cards
+$card-border-radius: $border-radius-md;
+$card-padding: $spacing-md;
+$card-shadow: $shadow-md;
+
+// Inputs
+$input-height: 3rem;
+$input-padding-y: 0.75rem;
+$input-padding-x: 1rem;
+$input-border-radius: $border-radius-md;
+
+// Floating Navigation
+$floating-nav-height: 4rem;
+$floating-nav-border-radius: 2rem;

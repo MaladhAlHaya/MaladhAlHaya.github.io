@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Maladh Al Haya - Product Details">
+    <meta name="theme-color" content="#121212">
+    <title>Product Details - Maladh Al Haya | ملاذ الحياء</title>
+    
+    <!-- PWA Support -->
+    <link rel="manifest" href="../manifest.json">
+    <link rel="apple-touch-icon" href="../assets/icons/icon-192x192.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../styles/main.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-theme">
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button data-lang="en" class="active">English</button>
+        <button data-lang="ml">മലയാളം</button>
+        <button data-lang="ar">العربية</button>
+    </div>
+    
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <button id="theme-toggle-btn">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+    
+    <!-- Header -->
+    <header class="main-header">
+        <div class="logo">
+            <h1>
+                <a href="../index.html">
+                    <span class="en">Maladh Al Haya</span>
+                    <span class="ar">ملاذ الحياء</span>
+                </a>
+            </h1>
+        </div>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search products...">
+            <button id="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../index.html" data-lang-key="home">Home</a></li>
+                <li><a href="categories.html" data-lang-key="categories">Categories</a></li>
+                <li><a href="about.html" data-lang-key="about">About</a></li>
+                <li><a href="contact.html" data-lang-key="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Side Menu (Hidden by default) -->
+    <nav class="side-menu">
+        <div class="side-menu-content">
+            <div class="side-menu-header">
+                <h2 data-lang-key="menu">Menu</h2>
+                <button class="close-menu-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <ul class="side-menu-links">
+                <li><a href="../index.html" data-lang-key="home">Home</a></li>
+                <li><a href="categories.html" data-lang-key="categories">Categories</a></li>
+                <li>
+                    <a href="#" class="dropdown-toggle" data-lang-key="products">Products</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="category.html?cat=dresses" data-lang-key="white_dresses">White Dresses</a></li>
+                        <li><a href="category.html?cat=kandura" data-lang-key="kandura">Kandura</a></li>
+                        <li><a href="category.html?cat=jubba" data-lang-key="jubba">Jubba</a></li>
+                        <li><a href="category.html?cat=kurta" data-lang-key="kurta">Kurta</a></li>
+                        <li><a href="category.html?cat=mund" data-lang-key="mund">Mund</a></li>
+                        <li><a href="category.html?cat=turban" data-lang-key="turban">Turban</a></li>
+                        <li><a href="category.html?cat=shall" data-lang-key="shall">Shall</a></li>
+                        <li><a href="category.html?cat=inners" data-lang-key="inners">Inners</a></li>
+                        <li><a href="category.html?cat=abaya" data-lang-key="abaya">Abaya</a></li>
+                        <li><a href="category.html?cat=parda" data-lang-key="parda">Parda</a></li>
+                        <li><a href="category.html?cat=hijab" data-lang-key="hijab">Hijab</a></li>
+                        <li><a href="category.html?cat=niqab" data-lang-key="niqab">Niqab</a></li>
+                        <li><a href="category.html?cat=fragrance" data-lang-key="fragrance">Fragrance</a></li>
+                        <li><a href="category.html?cat=quran" data-lang-key="quran">Quran</a></li>
+                        <li><a href="category.html?cat=kithabs" data-lang-key="kithabs">Kithabs</a></li>
+                        <li><a href="category.html?cat=prayer_mats" data-lang-key="prayer_mats">Prayer Mats</a></li>
+                    </ul>
+                </li>
+                <li><a href="offers.html" data-lang-key="offers">Offers</a></li>
+                <li><a href="about.html" data-lang-key="about">About</a></li>
+                <li><a href="contact.html" data-lang-key="contact">Contact</a></li>
+            </ul>
+            <div class="side-menu-footer">
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="category.html?cat=jubba">Jubba</a></li>
+                <li>Premium Jubba</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="product-detail-container">
+            <!-- Product Gallery -->
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img src="../assets/images/products/jubba-1.jpg" alt="Premium Jubba" id="main-product-image">
+                    <div class="image-zoom-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="thumbnail-images">
+                    <div class="thumbnail active" data-image="../assets/images/products/jubba-1.jpg">
+                        <img src="../assets/images/products/jubba-1.jpg" alt="Premium Jubba - Front">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/images/products/jubba-2.jpg">
+                        <img src="../assets/images/products/jubba-2.jpg" alt="Premium Jubba - Side">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/images/products/jubba-3.jpg">
+                        <img src="../assets/images/products/jubba-3.jpg" alt="Premium Jubba - Back">
+                    </div>
+                    <div class="thumbnail" data-image="../assets/images/products/jubba-4.jpg">
+                        <img src="../assets/images/products/jubba-4.jpg" alt="Premium Jubba - Detail">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product Info -->
+            <div class="product-info">
+                <h1 class="product-title">Premium Jubba</h1>
+                
+                <div class="product-rating">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <span class="rating-count">4.5 (120 reviews)</span>
+                </div>
+                
+                <div class="product-price">
+                    <span class="current-price">₹1,999</span>
+                    <span class="original-price">₹2,499</span>
+                    <span class="discount">20% OFF</span>
+                </div>
+                
+                <div class="product-availability">
+                    <i class="fas fa-check-circle"></i> In Stock
+                </div>
+                
+                <div class="product-description">
+                    <p>Elegant and comfortable Premium Jubba made from high-quality fabric. Perfect for daily wear and special occasions. The design combines traditional aesthetics with modern comfort.</p>
+                </div>
+                
+                <div class="product-variants">
+                    <div class="variant-group">
+                        <h3>Color</h3>
+                        <div class="color-options">
+                            <div class="color-option active" data-color="white" style="background-color: white;"></div>
+                            <div class="color-option" data-color="black" style="background-color: black;"></div>
+                            <div class="color-option" data-color="navy" style="background-color: navy;"></div>
+                            <div class="color-option" data-color="green" style="background-color: darkgreen;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="variant-group">
+                        <h3>Size</h3>
+                        <div class="size-options">
+                            <div class="size-option" data-size="S">S</div>
+                            <div class="size-option active" data-size="M">M</div>
+                            <div class="size-option" data-size="L">L</div>
+                            <div class="size-option" data-size="XL">XL</div>
+                            <div class="size-option" data-size="XXL">XXL</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quantity-selector">
+                    <h3>Quantity</h3>
+                    <div class="quantity-control">
+                        <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                        <input type="number" value="1" min="1" max="10" id="quantity-input">
+                        <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+                
+                <div class="product-actions">
+                    <button class="btn primary-btn add-to-cart-btn">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                    <button class="btn secondary-btn buy-now-btn">
+                        <i class="fas fa-bolt"></i> Buy Now
+                    </button>
+                    <button class="btn icon-btn wishlist-btn">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <button class="btn icon-btn compare-btn">
+                        <i class="fas fa-exchange-alt"></i>
+                    </button>
+                </div>
+                
+                <div class="product-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">SKU:</span>
+                        <span class="meta-value">JUB-PRE-001</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Category:</span>
+                        <span class="meta-value"><a href="category.html?cat=jubba">Jubba</a></span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Tags:</span>
+                        <span class="meta-value">
+                            <a href="search.html?tag=premium">Premium</a>,
+                            <a href="search.html?tag=men">Men</a>,
+                            <a href="search.html?tag=islamic-wear">Islamic Wear</a>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="social-share">
+                    <span>Share:</span>
+                    <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="share-btn pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Product Details Tabs -->
+        <div class="product-details-tabs">
+            <div class="tabs-header">
+                <button class="tab-btn active" data-tab="features">Features</button>
+                <button class="tab-btn" data-tab="specifications">Specifications</button>
+                <button class="tab-btn" data-tab="reviews">Reviews (120)</button>
+                <button class="tab-btn" data-tab="shipping">Shipping & Returns</button>
+            </div>
+            
+            <div class="tabs-content">
+                <!-- Features Tab -->
+                <div class="tab-content active" id="features">
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Premium quality fabric for maximum comfort</li>
+                        <li><i class="fas fa-check"></i> Elegant design suitable for all occasions</li>
+                        <li><i class="fas fa-check"></i> Breathable material perfect for daily wear</li>
+                        <li><i class="fas fa-check"></i> Durable stitching for long-lasting use</li>
+                        <li><i class="fas fa-check"></i> Easy to wash and maintain</li>
+                        <li><i class="fas fa-check"></i> Available in multiple colors and sizes</li>
+                        <li><i class="fas fa-check"></i> Traditional design with modern comfort</li>
+                        <li><i class="fas fa-check"></i> Suitable for both casual and formal occasions</li>
+                    </ul>
+                </div>
+                
+                <!-- Specifications Tab -->
+                <div class="tab-content" id="specifications">
+                    <table class="specs-table">
+                        <tr>
+                            <th>Material</th>
+                            <td>100% Cotton</td>
+                        </tr>
+                        <tr>
+                            <th>Weight</th>
+                            <td>350g</td>
+                        </tr>
+                        <tr>
+                            <th>Dimensions</th>
+                            <td>Varies by size</td>
+                        </tr>
+                        <tr>
+                            <th>Care Instructions</th>
+                            <td>Machine wash cold, gentle cycle. Do not bleach. Tumble dry low.</td>
+                        </tr>
+                        <tr>
+                            <th>Country of Origin</th>
+                            <td>India</td>
+                        </tr>
+                        <tr>
+                            <th>Warranty</th>
+                            <td>30 days against manufacturing defects</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <!-- Reviews Tab -->
+                <div class="tab-content" id="reviews">
+                    <div class="reviews-summary">
+                        <div class="overall-rating">
+                            <div class="rating-number">4.5</div>
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="rating-count">Based on 120 reviews</div>
+                        </div>
+                        
+                        <div class="rating-breakdown">
+                            <div class="rating-bar">
+                                <span class="rating-level">5 Stars</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 70%;"></div>
+                                </div>
+                                <span class="rating-percent">70%</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span class="rating-level">4 Stars</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 20%;"></div>
+                                </div>
+                                <span class="rating-percent">20%</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span class="rating-level">3 Stars</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 7%;"></div>
+                                </div>
+                                <span class="rating-percent">7%</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span class="rating-level">2 Stars</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 2%;"></div>
+                                </div>
+                                <span class="rating-percent">2%</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span class="rating-level">1 Star</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 1%;"></div>
+                                </div>
+                                <span class="rating-percent">1%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="review-form-container">
+                        <h3>Write a Review</h3>
+                        <form class="review-form">
+                            <div class="form-group">
+                                <label>Your Rating</label>
+                                <div class="rating-selector">
+                                    <i class="far fa-star" data-rating="1"></i>
+                                    <i class="far fa-star" data-rating="2"></i>
+                                    <i class="far fa-star" data-rating="3"></i>
+                                    <i class="far fa-star" data-rating="4"></i>
+                                    <i class="far fa-star" data-rating="5"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="review-title">Review Title</label>
+                                <input type="text" id="review-title" placeholder="Give your review a title">
+                            </div>
+                            <div class="form-group">
+                                <label for="review-content">Your Review</label>
+                                <textarea id="review-content" rows="5" placeholder="Write your review here"></textarea>
+                            </div>
+                            <button type="submit" class="btn primary-btn">Submit Review</button>
+                        </form>
+                    </div>
+                    
+                    <div class="reviews-list">
+                        <h3>Customer Reviews</h3>
+                        
+                        <!-- Review Item 1 -->
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <div class="reviewer-avatar">
+                                        <img src="../assets/images/avatars/user1.jpg" alt="User Avatar">
+                                    </div>
+                                    <div class="reviewer-details">
+                                        <h4>Ahmed K.</h4>
+                                        <div class="review-date">Posted on May 15, 2023</div>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="review-title">Excellent quality and comfort</div>
+                            <div class="review-content">
+                                <p>I purchased this jubba for Eid and was very impressed with the quality. The fabric is soft and comfortable, and the stitching is excellent. The fit is perfect, and I received many compliments. Highly recommended!</p>
+                            </div>
+                            <div class="review-actions">
+                                <button class="helpful-btn"><i class="far fa-thumbs-up"></i> Helpful (15)</button>
+                                <button class="report-btn"><i class="far fa-flag"></i> Report</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Review Item 2 -->
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <div class="reviewer-avatar">
+                                        <img src="../assets/images/avatars/user2.jpg" alt="User Avatar">
+                                    </div>
+                                    <div class="reviewer-details">
+                                        <h4>Mohammed S.</h4>
+                                        <div class="review-date">Posted on April 28, 2023</div>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="review-title">Good product but sizing runs small</div>
+                            <div class="review-content">
+                                <p>The quality of the jubba is excellent, but I found that the sizing runs a bit small. I usually wear a medium, but I had to exchange it for a large. Other than that, it's a great product and looks very elegant.</p>
+                            </div>
+                            <div class="review-actions">
+                                <button class="helpful-btn"><i class="far fa-thumbs-up"></i> Helpful (8)</button>
+                                <button class="report-btn"><i class="far fa-flag"></i> Report</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Review Item 3 -->
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <div class="reviewer-avatar">
+                                        <img src="../assets/images/avatars/user3.jpg" alt="User Avatar">
+                                    </div>
+                                    <div class="reviewer-details">
+                                        <h4>Fatima R.</h4>
+                                        <div class="review-date">Posted on March 10, 2023</div>
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                            <div class="review-title">Beautiful gift for my husband</div>
+                            <div class="review-content">
+                                <p>I bought this as a gift for my husband, and he absolutely loves it. The quality is excellent, and the design is very elegant. The color is exactly as shown in the pictures. Delivery was also very prompt.</p>
+                            </div>
+                            <div class="review-actions">
+                                <button class="helpful-btn"><i class="far fa-thumbs-up"></i> Helpful (12)</button>
+                                <button class="report-btn"><i class="far fa-flag"></i> Report</button>
+                            </div>
+                        </div>
+                        
+                        <div class="load-more">
+                            <button class="btn secondary-btn">Load More Reviews</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Shipping Tab -->
+                <div class="tab-content" id="shipping">
+                    <div class="shipping-info">
+                        <h3>Shipping Information</h3>
+                        <p>We ship to all major cities in India. Standard shipping takes 3-5 business days. Express shipping (additional charges apply) takes 1-2 business days.</p>
+                        
+                        <h4>Shipping Rates</h4>
+                        <ul>
+                            <li>Standard Shipping: ₹99 (Free for orders above ₹999)</li>
+                            <li>Express Shipping: ₹199</li>
+                        </ul>
+                        
+                        <h3>Return Policy</h3>
+                        <p>We accept returns within 7 days of delivery. The product must be unused and in its original packaging with all tags attached.</p>
+                        
+                        <h4>Return Process</h4>
+                        <ol>
+                            <li>Initiate a return request from your account or contact our customer service.</li>
+                            <li>Pack the item securely in its original packaging.</li>
+                            <li>Our courier partner will pick up the item from your address.</li>
+                            <li>Once we receive and inspect the item, we will process your refund within 5-7 business days.</li>
+                        </ol>
+                        
+                        <p>For more information, please refer to our <a href="shipping-returns.html">Shipping & Returns Policy</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Related Products -->
+        <section class="related-products">
+            <div class="section-header">
+                <h2>Related Products</h2>
+                <a href="category.html?cat=jubba" class="see-all">See All</a>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product Card 1 -->
+                <div class="product-card">
+                    <div class="product-badge">New</div>
+                    <div class="product-image">
+                        <img src="../assets/images/products/jubba-2.jpg" alt="Casual Jubba">
+                        <div class="product-actions">
+                            <button class="action-btn favorite-btn"><i class="far fa-heart"></i></button>
+                            <button class="action-btn cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Casual Jubba</h3>
+                        <div class="product-price">₹1,499</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.0)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 2 -->
+                <div class="product-card">
+                    <div class="product-badge sale">Sale</div>
+                    <div class="product-image">
+                        <img src="../assets/images/products/jubba-3.jpg" alt="Luxury Jubba">
+                        <div class="product-actions">
+                            <button class="action-btn favorite-btn"><i class="far fa-heart"></i></button>
+                            <button class="action-btn cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Jubba</h3>
+                        <div class="product-price">
+                            <span class="original-price">₹2,999</span>
+                            <span class="discounted-price">₹2,499</span>
+                        </div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../assets/images/products/jubba-4.jpg" alt="Traditional Jubba">
+                        <div class="product-actions">
+                            <button class="action-btn favorite-btn"><i class="far fa-heart"></i></button>
+                            <button class="action-btn cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Traditional Jubba</h3>
+                        <div class="product-price">₹1,799</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <span>(3.5)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../assets/images/products/jubba-5.jpg" alt="Modern Jubba">
+                        <div class="product-actions">
+                            <button class="action-btn favorite-btn"><i class="far fa-heart"></i></button>
+                            <button class="action-btn cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Modern Jubba</h3>
+                        <div class="product-price">₹1,899</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.0)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Recently Viewed -->
+        <section class="recently-viewed">
+            <div class="section-header">
+                <h2>Recently Viewed</h2>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product Card 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../assets/images/products/white-dress-1.jpg" alt="White Dress">
+                        <div class="product-actions">
+                            <button class="action-btn favorite-btn"><i class="far fa-heart"></i></button>
+                            <button class="action-btn cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Premium White Thobe</h3>
+                        <div class="product-price">₹1,499</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../assets/images/products/prayer-mat-1.jpg" alt="Prayer Mat">
+                        <div class="product-actions">
+                            <button class="action-btn favorite-btn"><i class="far fa-heart"></i></button>
+                            <button class="action-btn cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Luxury Prayer Mat</h3>
+                        <div class="product-price">₹899</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.0)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../assets/images/products/fragrance-1.jpg" alt="Fragrance">
+                        <div class="product-actions">
+                            <button class="action-btn favorite-btn"><i class="far fa-heart"></i></button>
+                            <button class="action-btn cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Alcohol-Free Fragrance</h3>
+                        <div class="product-price">₹899</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4.0)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../assets/images/products/quran-1.jpg" alt="Quran">
+                        <div class="product-actions">
+                            <button class="action-btn favorite-btn"><i class="far fa-heart"></i></button>
+                            <button class="action-btn cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Holy Quran with Translation</h3>
+                        <div class="product-price">₹1,199</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Floating Navigation Bar -->
+    <nav class="floating-nav">
+        <a href="../index.html" class="floating-nav-item">
+            <i class="fas fa-home"></i>
+            <span data-lang-key="home">Home</span>
+        </a>
+        <a href="cart.html" class="floating-nav-item">
+            <i class="fas fa-shopping-cart"></i>
+            <span data-lang-key="cart">Cart</span>
+            <span class="cart-count">0</span>
+        </a>
+        <a href="profile.html" class="floating-nav-item">
+            <i class="fas fa-user"></i>
+            <span data-lang-key="profile">Profile</span>
+        </a>
+    </nav>
+    
+    <!-- Product Image Modal -->
+    <div class="product-image-modal" id="product-image-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img src="../assets/images/products/jubba-1.jpg" alt="Premium Jubba" id="modal-image">
+            <div class="modal-navigation">
+                <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 data-lang-key="about_us">About Us</h3>
+                <p data-lang-key="about_description">Maladh Al Haya is dedicated to providing high-quality Islamic clothing and products for Muslims around the world.</p>
+            </div>
+            <div class="footer-section">
+                <h3 data-lang-key="quick_links">Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html" data-lang-key="home">Home</a></li>
+                    <li><a href="products.html" data-lang-key="products">Products</a></li>
+                    <li><a href="about.html" data-lang-key="about">About</a></li>
+                    <li><a href="contact.html" data-lang-key="contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 data-lang-key="contact_us">Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> info@maladhalhaya.com</p>
+                <p><i class="fas fa-phone"></i> +91 1234567890</p>
+                <p><i class="fas fa-map-marker-alt"></i> Kerala, India</p>
+            </div>
+            <div class="footer-section">
+                <h3 data-lang-key="follow_us">Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Maladh Al Haya. All rights reserved. | Designed by <a href="https://navarmp.digibayt.com" target="_blank">Muhammed Navar</a></p>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/language.js"></script>
+    <script src="../scripts/pwa.js"></script>
+    <script src="../scripts/effects.js"></script>
+    <script src="../scripts/product.js"></script>
+</body>
+</html>

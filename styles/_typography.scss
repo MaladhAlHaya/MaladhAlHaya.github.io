@@ -1,0 +1,299 @@
+// Typography SCSS File
+// Defines typography styles for the website
+
+// Base Typography
+body {
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-normal;
+  color: var(--text-color);
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  margin-bottom: $spacing-md;
+}
+
+h1 {
+  font-size: $font-size-3xl;
+  
+  @include mobile {
+    font-size: $font-size-2xl;
+  }
+}
+
+h2 {
+  font-size: $font-size-2xl;
+  
+  @include mobile {
+    font-size: $font-size-xl;
+  }
+}
+
+h3 {
+  font-size: $font-size-xl;
+  
+  @include mobile {
+    font-size: $font-size-lg;
+  }
+}
+
+h4 {
+  font-size: $font-size-lg;
+}
+
+h5 {
+  font-size: $font-size-md;
+}
+
+h6 {
+  font-size: $font-size-base;
+}
+
+// Paragraphs
+p {
+  margin-bottom: $spacing-md;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Links
+a {
+  color: var(--primary-color);
+  transition: color $transition-fast ease;
+  
+  &:hover {
+    color: var(--accent-color);
+  }
+}
+
+// Lists
+ul, ol {
+  margin-bottom: $spacing-md;
+  padding-left: $spacing-lg;
+  
+  li {
+    margin-bottom: $spacing-sm;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+// Inline Text Elements
+strong, b {
+  font-weight: $font-weight-bold;
+}
+
+em, i {
+  font-style: italic;
+}
+
+small {
+  font-size: $font-size-sm;
+}
+
+// Blockquote
+blockquote {
+  padding: $spacing-md;
+  margin: $spacing-md 0;
+  border-left: 4px solid var(--primary-color);
+  background-color: var(--bg-secondary);
+  font-style: italic;
+  
+  p {
+    margin-bottom: $spacing-sm;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  cite {
+    display: block;
+    font-size: $font-size-sm;
+    margin-top: $spacing-sm;
+    font-style: normal;
+  }
+}
+
+// Code
+code, pre {
+  font-family: monospace;
+  background-color: var(--bg-secondary);
+  border-radius: $border-radius-sm;
+}
+
+code {
+  padding: 0.2em 0.4em;
+  font-size: 0.9em;
+}
+
+pre {
+  padding: $spacing-md;
+  margin: $spacing-md 0;
+  overflow-x: auto;
+  
+  code {
+    padding: 0;
+    background-color: transparent;
+  }
+}
+
+// Arabic Text
+.arabic-text {
+  font-family: $font-family-secondary;
+  direction: rtl;
+}
+
+// Text Utilities
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-bold {
+  font-weight: $font-weight-bold;
+}
+
+.text-normal {
+  font-weight: $font-weight-regular;
+}
+
+.text-light {
+  font-weight: $font-weight-light;
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-secondary {
+  color: var(--secondary-color);
+}
+
+.text-accent {
+  color: var(--accent-color);
+}
+
+.text-success {
+  color: var(--success-color);
+}
+
+.text-error {
+  color: var(--error-color);
+}
+
+.text-warning {
+  color: var(--warning-color);
+}
+
+.text-info {
+  color: var(--info-color);
+}
+
+// Font Sizes
+.text-xs {
+  font-size: $font-size-xs;
+}
+
+.text-sm {
+  font-size: $font-size-sm;
+}
+
+.text-base {
+  font-size: $font-size-base;
+}
+
+.text-md {
+  font-size: $font-size-md;
+}
+
+.text-lg {
+  font-size: $font-size-lg;
+}
+
+.text-xl {
+  font-size: $font-size-xl;
+}
+
+.text-2xl {
+  font-size: $font-size-2xl;
+}
+
+.text-3xl {
+  font-size: $font-size-3xl;
+}
+
+.text-4xl {
+  font-size: $font-size-4xl;
+}
+
+// Line Heights
+.leading-tight {
+  line-height: $line-height-tight;
+}
+
+.leading-normal {
+  line-height: $line-height-normal;
+}
+
+.leading-loose {
+  line-height: $line-height-loose;
+}
+
+// Truncate
+.truncate {
+  @include truncate(1);
+}
+
+.truncate-2 {
+  @include truncate(2);
+}
+
+.truncate-3 {
+  @include truncate(3);
+}
+
+// Language-specific typography
+[lang="ar"] {
+  font-family: $font-family-secondary;
+  direction: rtl;
+}
+
+[lang="ml"] {
+  // Malayalam-specific styles if needed
+}

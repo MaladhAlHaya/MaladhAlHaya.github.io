@@ -1,0 +1,24 @@
+This is a placeholder file for icons.
+
+In a real implementation, this directory would contain actual icon files like:
+- favicon.ico
+- logo.svg
+- cart.svg
+- user.svg
+- search.svg
+- heart.svg
+- star.svg
+- menu.svg
+- close.svg
+- arrow-left.svg
+- arrow-right.svg
+- plus.svg
+- minus.svg
+- check.svg
+- filter.svg
+- sort.svg
+- language.svg
+- theme.svg
+- etc.
+
+Please replace this placeholder with actual icon files.

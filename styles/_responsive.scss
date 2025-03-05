@@ -1,0 +1,356 @@
+// Responsive SCSS File
+// Defines responsive styles for the website
+
+// Mobile First Approach
+// Default styles are for mobile, then we scale up
+
+// Small devices (576px and up)
+@include min-width($breakpoint-sm) {
+  // Header
+  .main-header {
+    .logo h1 {
+      font-size: $font-size-2xl;
+    }
+    
+    .search-container {
+      width: 300px;
+    }
+  }
+  
+  // Hero Section
+  .hero-section {
+    .featured-product {
+      flex-direction: row;
+      
+      .product-image,
+      .product-info {
+        width: 50%;
+      }
+    }
+  }
+  
+  // Categories Grid
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  // Products Grid
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Medium devices (768px and up)
+@include min-width($breakpoint-md) {
+  // Header
+  .main-header {
+    @include flex-between;
+    padding: $spacing-md $spacing-lg;
+    
+    .logo,
+    .search-container,
+    .main-nav {
+      flex: 1;
+    }
+    
+    .main-nav {
+      display: flex;
+      justify-content: flex-end;
+      
+      ul {
+        display: flex;
+        
+        li {
+          margin-left: $spacing-md;
+        }
+      }
+    }
+  }
+  
+  // Side Menu
+  .side-menu {
+    width: 300px;
+  }
+  
+  // Categories Grid
+  .categories-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  // Products Grid
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  // Footer
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-xl;
+  }
+}
+
+// Large devices (992px and up)
+@include min-width($breakpoint-lg) {
+  // Header
+  .main-header {
+    padding: $spacing-md $spacing-xl;
+    
+    .search-container {
+      width: 400px;
+    }
+  }
+  
+  // Hero Section
+  .hero-section {
+    .featured-product {
+      max-width: 1200px;
+      margin: 0 auto;
+      
+      .product-info {
+        padding: $spacing-xl;
+      }
+    }
+  }
+  
+  // Categories Grid
+  .categories-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  // Products Grid
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  // Footer
+  .footer-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+// Extra large devices (1200px and up)
+@include min-width($breakpoint-xl) {
+  // Container
+  .container {
+    max-width: $container-max-width-xl;
+  }
+  
+  // Header
+  .main-header {
+    .search-container {
+      width: 500px;
+    }
+  }
+}
+
+// Extra extra large devices (1400px and up)
+@include min-width($breakpoint-xxl) {
+  // Container
+  .container {
+    max-width: $container-max-width-xxl;
+  }
+}
+
+// Specific Responsive Adjustments
+
+// Hide Side Menu on Desktop
+.side-menu-toggle {
+  @include desktop {
+    display: none;
+  }
+}
+
+// Show Side Menu on Mobile
+.side-menu {
+  @include desktop {
+    display: none;
+  }
+}
+
+// Hide Main Nav on Mobile
+.main-nav {
+  @include mobile {
+    display: none;
+  }
+}
+
+// Floating Navigation
+.floating-nav {
+  @include desktop {
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: $floating-nav-border-radius;
+    padding: 0 $spacing-lg;
+  }
+}
+
+// Language Selector
+.language-selector {
+  @include mobile {
+    position: absolute;
+    top: $spacing-md;
+    left: $spacing-md;
+    z-index: $z-index-dropdown;
+  }
+  
+  @include desktop {
+    position: fixed;
+    top: $spacing-md;
+    left: $spacing-md;
+  }
+}
+
+// Theme Toggle
+.theme-toggle {
+  @include mobile {
+    top: $spacing-md;
+    right: $spacing-md;
+  }
+}
+
+// Product Card Adjustments
+.product-card {
+  @include mobile {
+    .product-actions {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+// Hero Section Adjustments
+.hero-section {
+  @include mobile {
+    .featured-product {
+      flex-direction: column;
+      
+      .product-image,
+      .product-info {
+        width: 100%;
+      }
+      
+      .product-image {
+        height: 300px;
+        
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      
+      .product-info {
+        padding: $spacing-lg;
+      }
+    }
+  }
+}
+
+// Offer Banner Adjustments
+.offer-banner {
+  @include mobile {
+    padding: $spacing-lg;
+    margin: $spacing-xl 0;
+  }
+}
+
+// Footer Adjustments
+.footer-content {
+  @include mobile {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+  }
+}
+
+// PWA Install Prompt
+.pwa-install-prompt {
+  @include desktop {
+    display: none;
+  }
+}
+
+// RTL Support for Responsive
+[dir="rtl"] {
+  @include min-width($breakpoint-md) {
+    .main-header {
+      .main-nav {
+        justify-content: flex-start;
+        
+        ul li {
+          margin-left: 0;
+          margin-right: $spacing-md;
+        }
+      }
+    }
+  }
+  
+  .language-selector {
+    @include mobile {
+      left: auto;
+      right: $spacing-md;
+    }
+    
+    @include desktop {
+      left: auto;
+      right: $spacing-md;
+    }
+  }
+  
+  .theme-toggle {
+    @include mobile {
+      right: auto;
+      left: $spacing-md;
+    }
+    
+    @include desktop {
+      right: auto;
+      left: $spacing-md;
+    }
+  }
+}
+
+// Print Styles
+@media print {
+  body {
+    background-color: white;
+    color: black;
+  }
+  
+  .main-header,
+  .main-footer,
+  .floating-nav,
+  .side-menu,
+  .theme-toggle,
+  .language-selector,
+  .pwa-install-prompt {
+    display: none;
+  }
+  
+  .main-content {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  
+  a {
+    text-decoration: underline;
+    color: black;
+  }
+  
+  .product-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+// Reduced Motion
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

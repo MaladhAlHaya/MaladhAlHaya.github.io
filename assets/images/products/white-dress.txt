@@ -1,0 +1,12 @@
+This is a placeholder file for a white dress product image.
+
+In a real implementation, this file would be replaced with actual product image files for white dresses, such as:
+- white-dress-1.jpg
+- white-dress-2.jpg
+- white-dress-3.jpg
+- white-dress-4.jpg
+- white-dress-5.jpg
+
+Each product should have multiple images showing different angles, details, and variations of the product.
+
+Please replace this placeholder with actual product image files.

@@ -1,0 +1,443 @@
+// Floating Navigation Component SCSS File
+// Defines styles for the floating navigation bar
+
+// Floating Navigation Bar
+.floating-nav {
+  position: fixed;
+  bottom: $spacing-md;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 500px;
+  height: $floating-nav-height;
+  background-color: var(--bg-secondary);
+  border-radius: $floating-nav-border-radius;
+  box-shadow: 0 2px 20px var(--shadow-color);
+  z-index: $z-index-fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  transition: var(--theme-transition), transform 0.3s ease;
+  
+  @include desktop {
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 $spacing-lg;
+  }
+  
+  // Hide on scroll down, show on scroll up
+  &.hidden {
+    transform: translateY(100%);
+    
+    @include desktop {
+      transform: translate(-50%, 100%);
+    }
+  }
+  
+  // Navigation Items
+  .floating-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-xs $spacing-sm;
+    color: var(--text-color);
+    transition: var(--theme-transition);
+    position: relative;
+    
+    i {
+      font-size: $font-size-lg;
+      margin-bottom: $spacing-xs;
+    }
+    
+    span {
+      font-size: $font-size-xs;
+      font-weight: $font-weight-medium;
+    }
+    
+    // Cart Count
+    .cart-count {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: var(--accent-color);
+      color: $black;
+      font-size: 10px;
+      font-weight: $font-weight-bold;
+      @include flex-center;
+    }
+    
+    &:hover {
+      color: var(--primary-color);
+    }
+    
+    &.active {
+      color: var(--primary-color);
+    }
+  }
+  
+  // Center Button (Special)
+  .floating-nav-center {
+    position: relative;
+    
+    .center-btn {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: var(--primary-color);
+      color: $white;
+      @include flex-center;
+      box-shadow: 0 2px 10px rgba($primary-color, 0.3);
+      transition: var(--theme-transition);
+      
+      &:hover {
+        transform: translateX(-50%) scale(1.1);
+      }
+      
+      i {
+        font-size: $font-size-xl;
+        margin: 0;
+      }
+    }
+  }
+}
+
+// Floating Action Button (FAB)
+.fab {
+  position: fixed;
+  bottom: $spacing-xl;
+  right: $spacing-xl;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: $white;
+  @include flex-center;
+  box-shadow: 0 4px 10px rgba($primary-color, 0.3);
+  z-index: $z-index-fixed;
+  transition: all $transition-normal ease;
+  
+  &:hover, &:focus {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba($primary-color, 0.4);
+  }
+  
+  &:active {
+    transform: scale(1);
+  }
+  
+  // FAB with Menu
+  &.fab-menu {
+    &.active {
+      i {
+        transform: rotate(45deg);
+      }
+      
+      .fab-menu-items {
+        opacity: 1;
+        visibility: visible;
+        
+        .fab-menu-item {
+          transform: translateY(0);
+        }
+      }
+    }
+    
+    i {
+      transition: transform 0.3s ease;
+    }
+    
+    .fab-menu-items {
+      position: absolute;
+      bottom: 70px;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: $spacing-md;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      
+      .fab-menu-item {
+        display: flex;
+        align-items: center;
+        transform: translateY(20px);
+        transition: transform 0.3s ease;
+        
+        &:nth-child(1) {
+          transition-delay: 0.05s;
+        }
+        
+        &:nth-child(2) {
+          transition-delay: 0.1s;
+        }
+        
+        &:nth-child(3) {
+          transition-delay: 0.15s;
+        }
+        
+        &:nth-child(4) {
+          transition-delay: 0.2s;
+        }
+        
+        .fab-menu-label {
+          background-color: var(--bg-secondary);
+          color: var(--text-color);
+          padding: $spacing-xs $spacing-sm;
+          border-radius: $border-radius-md;
+          margin-right: $spacing-sm;
+          font-size: $font-size-sm;
+          box-shadow: 0 2px 5px var(--shadow-color);
+          white-space: nowrap;
+        }
+        
+        .fab-menu-btn {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background-color: var(--secondary-color);
+          color: $white;
+          @include flex-center;
+          box-shadow: 0 2px 5px var(--shadow-color);
+          transition: var(--theme-transition);
+          
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Quick Actions
+.quick-actions {
+  position: fixed;
+  bottom: $spacing-xl;
+  right: $spacing-xl;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  z-index: $z-index-fixed;
+  
+  .quick-action {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--bg-secondary);
+    color: var(--text-color);
+    @include flex-center;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    transition: var(--theme-transition);
+    
+    &:hover {
+      transform: scale(1.1);
+      background-color: var(--primary-color);
+      color: $white;
+    }
+    
+    &.scroll-top {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      
+      &.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+    
+    &.whatsapp {
+      background-color: #25d366;
+      color: $white;
+    }
+    
+    &.chat {
+      background-color: var(--primary-color);
+      color: $white;
+      
+      &.unread:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: var(--error-color);
+      }
+    }
+  }
+}
+
+// Bottom Sheet
+.bottom-sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--bg-secondary);
+  border-top-left-radius: $border-radius-lg;
+  border-top-right-radius: $border-radius-lg;
+  box-shadow: 0 -2px 10px var(--shadow-color);
+  z-index: $z-index-modal;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  
+  &.active {
+    transform: translateY(0);
+  }
+  
+  // Bottom Sheet Header
+  .bottom-sheet-header {
+    padding: $spacing-md;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    h3 {
+      margin: 0;
+      font-size: $font-size-lg;
+    }
+    
+    .close-sheet-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: var(--bg-primary);
+      color: var(--text-color);
+      @include flex-center;
+      transition: var(--theme-transition);
+      
+      &:hover {
+        background-color: var(--primary-color);
+        color: $white;
+      }
+    }
+    
+    // Drag Handle
+    .drag-handle {
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 4px;
+      border-radius: $border-radius-full;
+      background-color: var(--border-color);
+    }
+  }
+  
+  // Bottom Sheet Content
+  .bottom-sheet-content {
+    padding: $spacing-md;
+    max-height: 70vh;
+    overflow-y: auto;
+    
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--primary-color);
+      border-radius: $border-radius-full;
+    }
+  }
+  
+  // Bottom Sheet Footer
+  .bottom-sheet-footer {
+    padding: $spacing-md;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    gap: $spacing-sm;
+    
+    .btn {
+      flex: 1;
+    }
+  }
+}
+
+// RTL Support
+[dir="rtl"] {
+  .floating-nav-item {
+    .cart-count {
+      right: auto;
+      left: 0;
+    }
+  }
+  
+  .fab {
+    right: auto;
+    left: $spacing-xl;
+    
+    &.fab-menu {
+      .fab-menu-items {
+        right: auto;
+        left: 0;
+        align-items: flex-start;
+        
+        .fab-menu-item {
+          .fab-menu-label {
+            margin-right: 0;
+            margin-left: $spacing-sm;
+          }
+        }
+      }
+    }
+  }
+  
+  .quick-actions {
+    right: auto;
+    left: $spacing-xl;
+  }
+}
+
+// Responsive Adjustments
+@include mobile {
+  .floating-nav {
+    width: 100%;
+    border-radius: 0;
+    bottom: 0;
+    height: 60px;
+    
+    .floating-nav-item {
+      i {
+        font-size: $font-size-md;
+      }
+      
+      span {
+        font-size: 10px;
+      }
+    }
+  }
+  
+  .fab {
+    bottom: 80px;
+  }
+  
+  .quick-actions {
+    bottom: 80px;
+  }
+}
+
+// Animation for Floating Nav
+.floating-nav {
+  animation: slideInUp 0.5s ease;
+}
+
+// Animation for FAB
+.fab {
+  animation: scaleIn 0.3s ease;
+}

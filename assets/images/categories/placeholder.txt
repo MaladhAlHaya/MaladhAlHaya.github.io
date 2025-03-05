@@ -1,0 +1,22 @@
+This is a placeholder file for category images.
+
+In a real implementation, this directory would contain actual category image files like:
+- white-dresses.jpg
+- jubba.jpg
+- abaya.jpg
+- quran.jpg
+- kandura.jpg
+- kurta.jpg
+- mund.jpg
+- turban.jpg
+- shall.jpg
+- inners.jpg
+- parda.jpg
+- hijab.jpg
+- niqab.jpg
+- fragrance.jpg
+- kithabs.jpg
+- prayer-mats.jpg
+- etc.
+
+Please replace this placeholder with actual category image files.

@@ -1,0 +1,7 @@
+This is a placeholder file for the logo.
+
+In a real implementation, this file would be replaced with an actual logo image file (e.g., logo.svg, logo.png) for the 'ملاذ الحياء' (Maladh Al Haya) e-commerce website.
+
+The logo should represent the brand identity and be used consistently across the website, including in the header, footer, favicon, and any other brand-related elements.
+
+Please replace this placeholder with an actual logo image file.

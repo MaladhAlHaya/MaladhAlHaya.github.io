@@ -1,0 +1,451 @@
+// Buttons Component SCSS File
+// Defines styles for buttons
+
+// Base Button
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $button-padding-y $button-padding-x;
+  border-radius: $button-border-radius;
+  font-weight: $font-weight-medium;
+  text-align: center;
+  cursor: pointer;
+  transition: all $transition-normal ease;
+  border: none;
+  outline: none;
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+  line-height: 1.5;
+  
+  &:disabled, &.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  
+  // Button with Icon
+  i, svg {
+    margin-right: $spacing-sm;
+    
+    &:only-child {
+      margin-right: 0;
+    }
+  }
+  
+  // Button with Ripple Effect
+  @include ripple-effect;
+}
+
+// Button Variants
+// Primary Button
+.primary-btn {
+  background-color: var(--primary-color);
+  color: $white;
+  
+  &:hover, &:focus {
+    background-color: darken($primary-color, 10%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba($primary-color, 0.3);
+  }
+  
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba($primary-color, 0.3);
+  }
+}
+
+// Secondary Button
+.secondary-btn {
+  background-color: var(--secondary-color);
+  color: $white;
+  
+  &:hover, &:focus {
+    background-color: darken($secondary-color, 10%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba($secondary-color, 0.3);
+  }
+  
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba($secondary-color, 0.3);
+  }
+}
+
+// Accent Button
+.accent-btn {
+  background-color: var(--accent-color);
+  color: $black;
+  
+  &:hover, &:focus {
+    background-color: darken($accent-color, 10%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba($accent-color, 0.3);
+  }
+  
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba($accent-color, 0.3);
+  }
+}
+
+// Outline Button
+.outline-btn {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  
+  &:hover, &:focus {
+    background-color: var(--primary-color);
+    color: $white;
+    transform: translateY(-2px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  &.outline-secondary {
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+    
+    &:hover, &:focus {
+      background-color: var(--secondary-color);
+      color: $white;
+    }
+  }
+  
+  &.outline-accent {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    
+    &:hover, &:focus {
+      background-color: var(--accent-color);
+      color: $black;
+    }
+  }
+}
+
+// Text Button
+.text-btn {
+  background-color: transparent;
+  color: var(--primary-color);
+  padding: $spacing-xs $spacing-sm;
+  
+  &:hover, &:focus {
+    background-color: rgba($primary-color, 0.1);
+  }
+  
+  &.text-secondary {
+    color: var(--secondary-color);
+    
+    &:hover, &:focus {
+      background-color: rgba($secondary-color, 0.1);
+    }
+  }
+  
+  &.text-accent {
+    color: var(--accent-color);
+    
+    &:hover, &:focus {
+      background-color: rgba($accent-color, 0.1);
+    }
+  }
+}
+
+// Ghost Button
+.ghost-btn {
+  background-color: rgba($white, 0.2);
+  color: $white;
+  backdrop-filter: blur(4px);
+  
+  &:hover, &:focus {
+    background-color: rgba($white, 0.3);
+  }
+}
+
+// Button Sizes
+.btn-xs {
+  padding: $spacing-xs $spacing-sm;
+  font-size: $font-size-xs;
+  border-radius: $border-radius-sm;
+}
+
+.btn-sm {
+  padding: $spacing-xs $spacing-md;
+  font-size: $font-size-sm;
+}
+
+.btn-lg {
+  padding: $spacing-sm $spacing-xl;
+  font-size: $font-size-md;
+}
+
+.btn-xl {
+  padding: $spacing-md $spacing-2xl;
+  font-size: $font-size-lg;
+}
+
+// Full Width Button
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+// Icon Button
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  @include flex-center;
+  
+  i, svg {
+    margin: 0;
+  }
+  
+  &.icon-btn-sm {
+    width: 32px;
+    height: 32px;
+    font-size: $font-size-sm;
+  }
+  
+  &.icon-btn-lg {
+    width: 48px;
+    height: 48px;
+    font-size: $font-size-lg;
+  }
+}
+
+// Button Group
+.btn-group {
+  display: inline-flex;
+  
+  .btn {
+    border-radius: 0;
+    
+    &:first-child {
+      border-top-left-radius: $button-border-radius;
+      border-bottom-left-radius: $button-border-radius;
+    }
+    
+    &:last-child {
+      border-top-right-radius: $button-border-radius;
+      border-bottom-right-radius: $button-border-radius;
+    }
+    
+    &:not(:last-child) {
+      border-right: 1px solid rgba($white, 0.2);
+    }
+  }
+}
+
+// Button with Badge
+.btn-with-badge {
+  position: relative;
+  
+  .badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: var(--accent-color);
+    color: $black;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-bold;
+    @include flex-center;
+    padding: 0 $spacing-xs;
+  }
+}
+
+// Floating Action Button (FAB)
+.fab {
+  position: fixed;
+  bottom: $spacing-xl;
+  right: $spacing-xl;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: $white;
+  @include flex-center;
+  box-shadow: 0 4px 10px rgba($primary-color, 0.3);
+  z-index: $z-index-fixed;
+  transition: all $transition-normal ease;
+  
+  &:hover, &:focus {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba($primary-color, 0.4);
+  }
+  
+  &:active {
+    transform: scale(1);
+  }
+  
+  &.fab-secondary {
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 10px rgba($secondary-color, 0.3);
+    
+    &:hover, &:focus {
+      box-shadow: 0 6px 15px rgba($secondary-color, 0.4);
+    }
+  }
+  
+  &.fab-accent {
+    background-color: var(--accent-color);
+    color: $black;
+    box-shadow: 0 4px 10px rgba($accent-color, 0.3);
+    
+    &:hover, &:focus {
+      box-shadow: 0 6px 15px rgba($accent-color, 0.4);
+    }
+  }
+}
+
+// Social Media Buttons
+.social-btn {
+  @include flex-center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all $transition-normal ease;
+  
+  &.facebook {
+    background-color: #1877f2;
+    color: $white;
+    
+    &:hover {
+      background-color: darken(#1877f2, 10%);
+    }
+  }
+  
+  &.twitter {
+    background-color: #1da1f2;
+    color: $white;
+    
+    &:hover {
+      background-color: darken(#1da1f2, 10%);
+    }
+  }
+  
+  &.instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: $white;
+    
+    &:hover {
+      filter: brightness(1.1);
+    }
+  }
+  
+  &.whatsapp {
+    background-color: #25d366;
+    color: $white;
+    
+    &:hover {
+      background-color: darken(#25d366, 10%);
+    }
+  }
+}
+
+// Loading Button
+.btn-loading {
+  position: relative;
+  pointer-events: none;
+  
+  .btn-text {
+    visibility: hidden;
+  }
+  
+  &:after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-right-color: currentColor;
+    animation: rotate 0.8s linear infinite;
+  }
+}
+
+// Action Buttons (for product cards)
+.action-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--bg-secondary);
+  color: var(--text-color);
+  @include flex-center;
+  transition: all $transition-normal ease;
+  box-shadow: 0 2px 5px var(--shadow-color);
+  
+  &:hover {
+    background-color: var(--primary-color);
+    color: $white;
+    transform: translateY(-2px);
+  }
+  
+  &.favorite-btn {
+    &.active {
+      background-color: #e91e63;
+      color: $white;
+    }
+  }
+  
+  &.cart-btn {
+    &.active {
+      background-color: var(--primary-color);
+      color: $white;
+    }
+  }
+}
+
+// RTL Support
+[dir="rtl"] {
+  .btn {
+    i, svg {
+      margin-right: 0;
+      margin-left: $spacing-sm;
+      
+      &:only-child {
+        margin-left: 0;
+      }
+    }
+  }
+  
+  .btn-with-badge {
+    .badge {
+      right: auto;
+      left: -8px;
+    }
+  }
+  
+  .fab {
+    right: auto;
+    left: $spacing-xl;
+  }
+  
+  .btn-group {
+    .btn {
+      &:first-child {
+        border-radius: 0;
+        border-top-right-radius: $button-border-radius;
+        border-bottom-right-radius: $button-border-radius;
+      }
+      
+      &:last-child {
+        border-radius: 0;
+        border-top-left-radius: $button-border-radius;
+        border-bottom-left-radius: $button-border-radius;
+      }
+      
+      &:not(:last-child) {
+        border-right: none;
+        border-left: 1px solid rgba($white, 0.2);
+      }
+    }
+  }
+}

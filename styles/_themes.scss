@@ -1,0 +1,231 @@
+// Themes SCSS File
+// Defines dark and light theme styles
+
+// CSS Variables for Theming
+:root {
+  // Default Theme (Dark)
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --accent-color: #{$accent-color};
+  
+  --success-color: #{$success-color};
+  --error-color: #{$error-color};
+  --warning-color: #{$warning-color};
+  --info-color: #{$info-color};
+  
+  --bg-primary: #{$bg-dark};
+  --bg-secondary: #{$bg-dark-secondary};
+  --text-color: #{$text-dark};
+  --border-color: #{$border-dark};
+  
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --shadow-color-light: rgba(0, 0, 0, 0.1);
+  
+  // Transition for theme switching
+  --theme-transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+// Light Theme
+.light-theme {
+  --bg-primary: #{$bg-light};
+  --bg-secondary: #{$bg-light-secondary};
+  --text-color: #{$text-light};
+  --border-color: #{$border-light};
+  
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --shadow-color-light: rgba(0, 0, 0, 0.05);
+}
+
+// Apply Theme to Elements
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-color);
+  transition: var(--theme-transition);
+}
+
+// Theme Toggle Button
+.theme-toggle {
+  position: fixed;
+  top: $spacing-md;
+  right: $spacing-md;
+  z-index: $z-index-fixed;
+  
+  button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--bg-secondary);
+    color: var(--text-color);
+    box-shadow: 0 2px 5px var(--shadow-color);
+    transition: var(--theme-transition);
+    @include flex-center;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+    
+    .fa-sun {
+      display: none;
+    }
+    
+    .fa-moon {
+      display: block;
+    }
+  }
+}
+
+// Light Theme Specific Styles
+.light-theme {
+  .theme-toggle button {
+    .fa-sun {
+      display: block;
+    }
+    
+    .fa-moon {
+      display: none;
+    }
+  }
+}
+
+// Component Theming
+// Cards
+.card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px var(--shadow-color-light);
+  transition: var(--theme-transition);
+}
+
+// Buttons
+.btn {
+  transition: var(--theme-transition);
+  
+  &.primary-btn {
+    background-color: var(--primary-color);
+    color: $white;
+    
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+  
+  &.secondary-btn {
+    background-color: var(--secondary-color);
+    color: $white;
+    
+    &:hover {
+      background-color: darken($secondary-color, 10%);
+    }
+  }
+  
+  &.accent-btn {
+    background-color: var(--accent-color);
+    color: $black;
+    
+    &:hover {
+      background-color: darken($accent-color, 10%);
+    }
+  }
+  
+  &.outline-btn {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    
+    &:hover {
+      background-color: var(--primary-color);
+      color: $white;
+    }
+  }
+}
+
+// Inputs
+input, textarea, select {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  transition: var(--theme-transition);
+  
+  &:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+  }
+}
+
+// Header
+.main-header {
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  transition: var(--theme-transition);
+}
+
+// Footer
+.main-footer {
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  transition: var(--theme-transition);
+}
+
+// Side Menu
+.side-menu {
+  background-color: var(--bg-secondary);
+  border-right: 1px solid var(--border-color);
+  transition: var(--theme-transition);
+}
+
+// Floating Navigation
+.floating-nav {
+  background-color: var(--bg-secondary);
+  box-shadow: 0 -2px 10px var(--shadow-color);
+  transition: var(--theme-transition);
+}
+
+// Product Card
+.product-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  transition: var(--theme-transition);
+}
+
+// Language Selector
+.language-selector {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  transition: var(--theme-transition);
+}
+
+// PWA Install Prompt
+.pwa-install-prompt {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 15px var(--shadow-color);
+  transition: var(--theme-transition);
+}
+
+// Search Container
+.search-container {
+  input {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    transition: var(--theme-transition);
+  }
+  
+  button {
+    background-color: var(--primary-color);
+    color: $white;
+    transition: var(--theme-transition);
+  }
+}
+
+// Offer Banner
+.offer-banner {
+  background-color: var(--primary-color);
+  transition: var(--theme-transition);
+}
+
+// Custom Cursor
+.custom-cursor {
+  background-color: var(--accent-color);
+  transition: var(--theme-transition), width 0.3s, height 0.3s, opacity 0.3s;
+}

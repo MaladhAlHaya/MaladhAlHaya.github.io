@@ -1,0 +1,18 @@
+This is a placeholder file for product images.
+
+In a real implementation, this directory would contain actual product image files like:
+- white-dress-1.jpg
+- jubba-1.jpg
+- jubba-2.jpg
+- jubba-3.jpg
+- jubba-4.jpg
+- jubba-5.jpg
+- abaya-1.jpg
+- kurta-1.jpg
+- hijab-1.jpg
+- quran-1.jpg
+- prayer-mat-1.jpg
+- fragrance-1.jpg
+- etc.
+
+Please replace this placeholder with actual product image files.

@@ -1,0 +1,273 @@
+// Mixins SCSS File
+// Contains reusable SCSS mixins and functions
+
+// Flexbox Mixins
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Grid Mixins
+@mixin grid($columns: 1fr, $rows: auto, $gap: 0) {
+  display: grid;
+  grid-template-columns: $columns;
+  grid-template-rows: $rows;
+  gap: $gap;
+}
+
+// Responsive Mixins
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: #{$breakpoint-sm - 1px}) {
+      @content;
+    }
+  } @else if $breakpoint == sm {
+    @media (min-width: #{$breakpoint-sm}) and (max-width: #{$breakpoint-md - 1px}) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (min-width: #{$breakpoint-md}) and (max-width: #{$breakpoint-lg - 1px}) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (min-width: #{$breakpoint-lg}) and (max-width: #{$breakpoint-xl - 1px}) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (min-width: #{$breakpoint-xl}) and (max-width: #{$breakpoint-xxl - 1px}) {
+      @content;
+    }
+  } @else if $breakpoint == xxl {
+    @media (min-width: #{$breakpoint-xxl}) {
+      @content;
+    }
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$breakpoint-md - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$breakpoint-md}) and (max-width: #{$breakpoint-lg - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$breakpoint-lg}) {
+    @content;
+  }
+}
+
+@mixin min-width($width) {
+  @media (min-width: #{$width}) {
+    @content;
+  }
+}
+
+@mixin max-width($width) {
+  @media (max-width: #{$width}) {
+    @content;
+  }
+}
+
+// Typography Mixins
+@mixin font-size($size, $line-height: $line-height-normal) {
+  font-size: $size;
+  line-height: $line-height;
+}
+
+@mixin heading($size, $weight: $font-weight-bold, $line-height: $line-height-tight) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+  margin-bottom: $spacing-md;
+}
+
+// Position Mixins
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absolute-fill {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@mixin fixed-fill {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+// Animation Mixins
+@mixin transition($property: all, $duration: $transition-normal, $timing: ease, $delay: 0s) {
+  transition-property: $property;
+  transition-duration: $duration;
+  transition-timing-function: $timing;
+  transition-delay: $delay;
+}
+
+@mixin fade-in($duration: $transition-normal) {
+  animation: fadeIn $duration ease forwards;
+}
+
+@mixin fade-out($duration: $transition-normal) {
+  animation: fadeOut $duration ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+// Shadow Mixins
+@mixin box-shadow($shadow: $shadow-md) {
+  box-shadow: $shadow;
+}
+
+@mixin text-shadow($shadow: 0 1px 2px rgba(0, 0, 0, 0.1)) {
+  text-shadow: $shadow;
+}
+
+// Border Mixins
+@mixin border($width: $border-width-thin, $style: solid, $color: currentColor) {
+  border: $width $style $color;
+}
+
+@mixin border-radius($radius: $border-radius-md) {
+  border-radius: $radius;
+}
+
+// Truncate Text
+@mixin truncate($lines: 1) {
+  @if $lines == 1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+// Hide Visually (accessible for screen readers)
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Container
+@mixin container {
+  width: 100%;
+  padding-right: $spacing-md;
+  padding-left: $spacing-md;
+  margin-right: auto;
+  margin-left: auto;
+  
+  @include min-width($breakpoint-sm) {
+    max-width: $container-max-width-sm;
+  }
+  
+  @include min-width($breakpoint-md) {
+    max-width: $container-max-width-md;
+  }
+  
+  @include min-width($breakpoint-lg) {
+    max-width: $container-max-width-lg;
+  }
+  
+  @include min-width($breakpoint-xl) {
+    max-width: $container-max-width-xl;
+  }
+  
+  @include min-width($breakpoint-xxl) {
+    max-width: $container-max-width-xxl;
+  }
+}
+
+// RTL Support for multilingual (Arabic)
+@mixin rtl {
+  [dir="rtl"] & {
+    @content;
+  }
+}
+
+// Cursor Effects
+@mixin custom-cursor($cursor-url) {
+  cursor: url($cursor-url), auto;
+}
+
+// Touch Ripple Effect
+@mixin ripple-effect {
+  position: relative;
+  overflow: hidden;
+  
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform 0.5s, opacity 1s;
+  }
+  
+  &:active::after {
+    transform: scale(0, 0);
+    opacity: 0.3;
+    transition: 0s;
+  }
+}
